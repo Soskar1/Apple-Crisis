@@ -6,12 +6,16 @@ namespace Core.Targets
     {
         [SerializeField] private TargetInput _input;
         [SerializeField] private ThirdPersonRotation _rotation;
-        [SerializeField] private Camera _camera;
+        private Camera _camera;
         private IMovement _movement;
 
         private Vector3 _targetMovementDirection;
 
-        private void Awake() => _movement = GetComponent<IMovement>();
+        private void Awake()
+        {
+            _movement = GetComponent<IMovement>();
+            _camera = Camera.main;
+        }
 
         private void Update()
         {

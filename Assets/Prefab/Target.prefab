@@ -100,7 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _input: {fileID: 2476275655893997069}
   _rotation: {fileID: 4601470735774995867}
-  _camera: {fileID: 0}
 --- !u!114 &7478389335530888503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,8 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 766274338046369955}
-  _maxSpeed: 22
-  _acceleration: 22
+  _maxSpeed: 15
+  _acceleration: 10
   _decceleration: 15
   _velocityPower: 0.5
 --- !u!114 &2476275655893997069
