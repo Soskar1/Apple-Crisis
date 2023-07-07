@@ -9,7 +9,7 @@ namespace Core.Targets
         [SerializeField] private float _maxSpeed;
         [SerializeField] private float _acceleration;
         [SerializeField] private float _decceleration;
-        [SerializeField] private float _velocityPower;
+        private float _velocityPower = 0.5f;
 
         private const float EPSILON = 0.01f;
 

@@ -4,9 +4,19 @@ namespace Core
 {
     public class TargetInput : MonoBehaviour
     {
-        public Controls Controls { get; private set; }
+        private Controls _controls;
 
-        private void Awake() => Controls = new Controls();
+        public Controls Controls
+        {
+            get
+            {
+                if (_controls == null)
+                    _controls = new Controls();
+
+                return _controls;
+            }
+        }
+
         public void OnEnable() => Controls.Enable();
         public void OnDisable() => Controls.Disable();
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Core.Targets
 {
@@ -6,6 +7,7 @@ namespace Core.Targets
     {
         [SerializeField] private TargetInput _input;
         [SerializeField] private ThirdPersonRotation _rotation;
+        [SerializeField] private Jumping _jumping;
         private Camera _camera;
         private IMovement _movement;
 
@@ -16,6 +18,9 @@ namespace Core.Targets
             _movement = GetComponent<IMovement>();
             _camera = Camera.main;
         }
+
+        private void OnEnable() => _input.Controls.Target.Jump.performed += Jump;
+        private void OnDisable() => _input.Controls.Target.Jump.performed -= Jump;
 
         private void Update()
         {
@@ -29,5 +34,7 @@ namespace Core.Targets
             Vector3 movementDirection = _input.MovementInput.magnitude == 0 ? Vector3.zero : _targetMovementDirection;
             _movement.Move(movementDirection);
         }
+
+        private void Jump(InputAction.CallbackContext ctx) => _jumping.Jump();
     }
 }
