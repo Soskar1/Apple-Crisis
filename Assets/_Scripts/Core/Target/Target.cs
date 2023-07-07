@@ -8,6 +8,7 @@ namespace Core.Targets
         [SerializeField] private TargetInput _input;
         [SerializeField] private ThirdPersonRotation _rotation;
         [SerializeField] private Jumping _jumping;
+        [SerializeField] private GroundCheck _groundCheck;
         private Camera _camera;
         private IMovement _movement;
 
@@ -35,6 +36,10 @@ namespace Core.Targets
             _movement.Move(movementDirection);
         }
 
-        private void Jump(InputAction.CallbackContext ctx) => _jumping.Jump();
+        private void Jump(InputAction.CallbackContext ctx)
+        {
+            if (_groundCheck.CheckForGround())
+                _jumping.Jump();
+        }
     }
 }

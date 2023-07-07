@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.629995, z: -7.50001}
+  m_FollowOffset: {x: 0, y: 0.75, z: -5}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 0
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.629995, z: -7.50001}
+  m_FollowOffset: {x: 0, y: 0.75, z: -5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -947,7 +947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.629995, z: -7.50001}
+  m_FollowOffset: {x: 0, y: 0.75, z: -5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1091,7 +1091,7 @@ GameObject:
   - component: {fileID: 1409397598}
   - component: {fileID: 1409397597}
   - component: {fileID: 1409397596}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
