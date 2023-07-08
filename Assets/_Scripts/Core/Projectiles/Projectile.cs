@@ -7,23 +7,22 @@ namespace Core.Projectiles
     public abstract class Projectile : MonoBehaviour
     {
         [SerializeField] private Rigidbody _rigidbody;
-        [SerializeField] private MeshRenderer _renderer;
+        [SerializeField] private GameObject _visual;
 
         public Rigidbody Rigidbody => _rigidbody;
-        protected MeshRenderer Renderer => _renderer;
 
         public Action Landed;
         public Action TargetHit;
 
         public virtual void VisibleLaunch(Vector3 direction)
         {
-            Renderer.enabled = true;
+            _visual.SetActive(true);
             Launch(direction);
         }
 
         public virtual void GhostLaunch(Vector3 direction)
         {
-            Renderer.enabled = false;
+            _visual.SetActive(false);
             Launch(direction);
         }
 

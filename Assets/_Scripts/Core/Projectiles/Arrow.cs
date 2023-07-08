@@ -14,6 +14,12 @@ namespace Core.Projectiles
             _landPointPrefab.SetActive(false);
         }
 
+        private void FixedUpdate()
+        {
+            if (Rigidbody.velocity != Vector3.zero)
+                transform.rotation = Quaternion.LookRotation(Rigidbody.velocity);
+        }
+
         public override void Launch(Vector3 direction) => Rigidbody.AddForce(direction, ForceMode.Impulse);
 
         public override void Deactivate()
@@ -29,7 +35,7 @@ namespace Core.Projectiles
             if (!_landPointInstance.gameObject.activeSelf)
             {
                 _landPointInstance.SetActive(true);
-                _landPointInstance.transform.position = transform.position;
+                _landPointInstance.transform.position = collision.contacts[0].point;
             }
             
              Landed?.Invoke();
