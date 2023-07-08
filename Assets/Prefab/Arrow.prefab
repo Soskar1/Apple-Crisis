@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5117341761097420390}
   - component: {fileID: 6439237134976515960}
   - component: {fileID: 8754896837453961578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 570552277758762359}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5117341761097420390
 Rigidbody:
@@ -60,7 +60,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &6439237134976515960
 BoxCollider:
@@ -95,8 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71885f7c5aade41499d2f922a5f39d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 5772427390266180783}
   _rigidbody: {fileID: 5117341761097420390}
-  _direction: {x: 0, y: 20, z: -5}
+  _landPointPrefab: {fileID: 4789667820983050721, guid: e8c6ee56b2618de44815a1b99881531d,
+    type: 3}
 --- !u!1 &8468337386837955319
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +110,7 @@ GameObject:
   - component: {fileID: 570552277758762359}
   - component: {fileID: 7405834615632524408}
   - component: {fileID: 5772427390266180783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

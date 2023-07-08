@@ -16,6 +16,12 @@ namespace Core.Targets
             _camera.LookAt = targetInstance.transform;
 
             HideCursor();
+
+            //Target & Ghost
+            Physics.IgnoreLayerCollision(6, 7);
+
+            //Ghost & Projectile
+            Physics.IgnoreLayerCollision(7, 8);
         }
 
         private void HideCursor()

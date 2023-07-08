@@ -47,7 +47,7 @@ namespace Core.Targets
         {
             if (other.TryGetComponent(out Projectile projectile))
             {
-                Destroy(projectile.gameObject);
+                projectile.Deactivate();
                 Debug.Log("event");
             }
         }
