@@ -12,7 +12,6 @@ namespace Core.Projectiles
         public Rigidbody Rigidbody => _rigidbody;
 
         public Action<Vector3> Landed;
-        public Action TargetHit;
 
         public virtual void VisibleLaunch(Vector3 direction)
         {
@@ -33,11 +32,7 @@ namespace Core.Projectiles
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out Target target))
-            {
-                Deactivate();
-                TargetHit?.Invoke();
-                Debug.Log("event");
-            }
+                Level.NextLevel();
         }
     }
 }
