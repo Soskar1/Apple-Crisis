@@ -4,7 +4,6 @@ namespace Core.Projectiles
 {
     public class Arrow : Projectile
     {
-        
         [SerializeField] private GameObject _landPointPrefab;
         private GameObject _landPointInstance;
 
@@ -12,6 +11,12 @@ namespace Core.Projectiles
         {
             _landPointInstance = Instantiate(_landPointPrefab, transform.position, Quaternion.identity);
             _landPointPrefab.SetActive(false);
+        }
+
+        private void FixedUpdate()
+        {
+            if (Rigidbody.velocity != Vector3.zero)
+                transform.rotation = Quaternion.LookRotation(Rigidbody.velocity);
         }
 
         public override void Launch(Vector3 direction) => Rigidbody.AddForce(direction, ForceMode.Impulse);
@@ -29,10 +34,10 @@ namespace Core.Projectiles
             if (!_landPointInstance.gameObject.activeSelf)
             {
                 _landPointInstance.SetActive(true);
-                _landPointInstance.transform.position = transform.position;
+                _landPointInstance.transform.position = collision.contacts[0].point;
             }
             
-             Landed?.Invoke();
+             Landed?.Invoke(collision.contacts[0].point);
         }
     }
 }
