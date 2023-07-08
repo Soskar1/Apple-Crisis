@@ -1,4 +1,6 @@
+using Core.UI;
 using UnityEngine;
+using Zenject;
 
 namespace Core.Projectiles
 {
@@ -10,10 +12,13 @@ namespace Core.Projectiles
         [SerializeField] private Vector3 _maxProjectileLaunchForce;
         [SerializeField] private Vector3 _minProjectileLaunchForce;
 
-        [SerializeField] private float _maxGhostLifeTime;
-
         private Projectile _projectileInstance;
         private Vector3 _directionToLaunch;
+
+        private HintArrow _hintArrow;
+
+        [Inject]
+        private void Construct(HintArrow hintArrow) => _hintArrow = hintArrow;
 
         private void Awake()
         {
@@ -30,6 +35,17 @@ namespace Core.Projectiles
             _projectileInstance.GhostLaunch(_directionToLaunch);
         }
 
+        private void Launch(Vector3 landPosition)
+        {
+            _projectileInstance.Landed -= Launch;
+            _projectileInstance.Landed += GameOver;
+
+            _hintArrow.StartPointing(landPosition);
+
+            ResetProjectile();
+            _projectileInstance.VisibleLaunch(_directionToLaunch);
+        }
+
         private void SelectDirectionToLaunch()
         {
             _directionToLaunch = new Vector3(
@@ -38,22 +54,13 @@ namespace Core.Projectiles
                 Random.Range(_minProjectileLaunchForce.z, _maxProjectileLaunchForce.z));
         }
 
-        private void Launch()
-        {
-            _projectileInstance.Landed -= Launch;
-            _projectileInstance.Landed += GameOver;
-
-            ResetProjectile();
-            _projectileInstance.VisibleLaunch(_directionToLaunch);
-        }
-
         private void ResetProjectile()
         {
             _projectileInstance.Rigidbody.velocity = Vector3.zero;
             _projectileInstance.transform.position = _spawnPosition.position;
         }
 
-        private void GameOver()
+        private void GameOver(Vector3 landPosition)
         {
             Debug.Log("Game Over");
             _projectileInstance.Deactivate();

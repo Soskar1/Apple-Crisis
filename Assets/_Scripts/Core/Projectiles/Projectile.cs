@@ -11,7 +11,7 @@ namespace Core.Projectiles
 
         public Rigidbody Rigidbody => _rigidbody;
 
-        public Action Landed;
+        public Action<Vector3> Landed;
         public Action TargetHit;
 
         public virtual void VisibleLaunch(Vector3 direction)

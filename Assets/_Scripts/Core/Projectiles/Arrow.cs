@@ -4,7 +4,6 @@ namespace Core.Projectiles
 {
     public class Arrow : Projectile
     {
-        
         [SerializeField] private GameObject _landPointPrefab;
         private GameObject _landPointInstance;
 
@@ -38,7 +37,7 @@ namespace Core.Projectiles
                 _landPointInstance.transform.position = collision.contacts[0].point;
             }
             
-             Landed?.Invoke();
+             Landed?.Invoke(collision.contacts[0].point);
         }
     }
 }
