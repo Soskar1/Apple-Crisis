@@ -64,6 +64,7 @@ namespace Core.Projectiles
         {
             Debug.Log("Game Over");
             _projectileInstance.Deactivate();
+            _hintArrow.Hide();
         }
     }
 }

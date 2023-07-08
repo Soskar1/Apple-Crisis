@@ -32,5 +32,11 @@ namespace Core.UI
             _pointTo = pointTo;
             _visual.SetActive(true);
         }
+
+        public void Hide()
+        {
+            _visual.SetActive(false);
+            _pointTo = Vector3.zero;
+        }
     }
 }
