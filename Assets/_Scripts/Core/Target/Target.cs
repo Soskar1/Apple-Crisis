@@ -1,3 +1,4 @@
+using Core.Projectiles;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,6 +41,15 @@ namespace Core.Targets
         {
             if (_groundCheck.CheckForGround())
                 _jumping.Jump();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out Projectile projectile))
+            {
+                Destroy(projectile.gameObject);
+                Debug.Log("event");
+            }
         }
     }
 }
