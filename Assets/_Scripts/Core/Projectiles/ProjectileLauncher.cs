@@ -60,11 +60,6 @@ namespace Core.Projectiles
             _projectileInstance.transform.position = _spawnPosition.position;
         }
 
-        private void GameOver(Vector3 landPosition)
-        {
-            Debug.Log("Game Over");
-            _projectileInstance.Deactivate();
-            _hintArrow.Hide();
-        }
+        private void GameOver(Vector3 landPosition) => Level.RestartLevel();
     }
 }

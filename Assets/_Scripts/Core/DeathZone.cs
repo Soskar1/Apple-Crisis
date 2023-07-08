@@ -21,7 +21,7 @@ namespace Core
                 _projectileLauncher.GhostLaunch();
 
             if (other.TryGetComponent(out Target target))
-                Debug.Log("Game Over");
+                Level.RestartLevel();
         }
     }
 }
