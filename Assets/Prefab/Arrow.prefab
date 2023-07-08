@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 5117341761097420390}
   _visual: {fileID: 3125574742544445428}
-  _landPointPrefab: {fileID: 4789667820983050721, guid: e8c6ee56b2618de44815a1b99881531d,
+  _landPointPrefab: {fileID: 919132149155446097, guid: 9470b564598de404baf8d87d45d6882e,
     type: 3}
 --- !u!1001 &2855612545459704485
 PrefabInstance:

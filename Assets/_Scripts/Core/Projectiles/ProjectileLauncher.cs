@@ -15,11 +15,6 @@ namespace Core.Projectiles
         private Projectile _projectileInstance;
         private Vector3 _directionToLaunch;
 
-        private HintArrow _hintArrow;
-
-        [Inject]
-        private void Construct(HintArrow hintArrow) => _hintArrow = hintArrow;
-
         private void Awake()
         {
             _projectileInstance = Instantiate(_projectilePrefab, _spawnPosition.position, Quaternion.identity);
@@ -35,12 +30,10 @@ namespace Core.Projectiles
             _projectileInstance.GhostLaunch(_directionToLaunch);
         }
 
-        private void Launch(Vector3 landPosition)
+        private void Launch()
         {
             _projectileInstance.Landed -= Launch;
-            _projectileInstance.Landed += GameOver;
-
-            _hintArrow.StartPointing(landPosition);
+            _projectileInstance.Landed += Level.RestartLevel;
 
             ResetProjectile();
             _projectileInstance.VisibleLaunch(_directionToLaunch);
@@ -59,7 +52,5 @@ namespace Core.Projectiles
             _projectileInstance.Rigidbody.velocity = Vector3.zero;
             _projectileInstance.transform.position = _spawnPosition.position;
         }
-
-        private void GameOver(Vector3 landPosition) => Level.RestartLevel();
     }
 }
