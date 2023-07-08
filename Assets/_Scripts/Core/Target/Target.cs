@@ -40,14 +40,5 @@ namespace Core.Targets
             if (_groundCheck.CheckForGround())
                 _jumping.Jump();
         }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.TryGetComponent(out Projectile projectile))
-            {
-                projectile.Deactivate();
-                Debug.Log("event");
-            }
-        }
     }
 }
