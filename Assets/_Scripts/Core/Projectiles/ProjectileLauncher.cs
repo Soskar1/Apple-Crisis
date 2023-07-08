@@ -10,6 +10,8 @@ namespace Core.Projectiles
         [SerializeField] private Vector3 _maxProjectileLaunchForce;
         [SerializeField] private Vector3 _minProjectileLaunchForce;
 
+        [SerializeField] private float _maxGhostLifeTime;
+
         private Projectile _projectileInstance;
         private Vector3 _directionToLaunch;
 
@@ -21,9 +23,9 @@ namespace Core.Projectiles
 
         private void Start() => GhostLaunch();
 
-        private void GhostLaunch()
+        public void GhostLaunch()
         {
-            _projectileInstance.transform.position = _spawnPosition.position;
+            ResetProjectile();
             SelectDirectionToLaunch();
             _projectileInstance.GhostLaunch(_directionToLaunch);
         }
@@ -41,8 +43,14 @@ namespace Core.Projectiles
             _projectileInstance.Landed -= Launch;
             _projectileInstance.Landed += GameOver;
 
-            _projectileInstance.transform.position = _spawnPosition.position;
+            ResetProjectile();
             _projectileInstance.VisibleLaunch(_directionToLaunch);
+        }
+
+        private void ResetProjectile()
+        {
+            _projectileInstance.Rigidbody.velocity = Vector3.zero;
+            _projectileInstance.transform.position = _spawnPosition.position;
         }
 
         private void GameOver()

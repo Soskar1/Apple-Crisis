@@ -4,7 +4,7 @@ namespace Core.Projectiles
 {
     public class Arrow : Projectile
     {
-        [SerializeField] private Rigidbody _rigidbody;
+        
         [SerializeField] private GameObject _landPointPrefab;
         private GameObject _landPointInstance;
 
@@ -14,7 +14,7 @@ namespace Core.Projectiles
             _landPointPrefab.SetActive(false);
         }
 
-        public override void Launch(Vector3 direction) => _rigidbody.AddForce(direction, ForceMode.Impulse);
+        public override void Launch(Vector3 direction) => Rigidbody.AddForce(direction, ForceMode.Impulse);
 
         public override void Deactivate()
         {
@@ -24,10 +24,13 @@ namespace Core.Projectiles
 
         private void OnCollisionEnter(Collision collision)
         {
-            _rigidbody.velocity = Vector3.zero;
+            Rigidbody.velocity = Vector3.zero;
 
-            _landPointInstance.SetActive(IsGhost);
-            _landPointInstance.transform.position = transform.position;
+            if (!_landPointInstance.gameObject.activeSelf)
+            {
+                _landPointInstance.SetActive(true);
+                _landPointInstance.transform.position = transform.position;
+            }
             
              Landed?.Invoke();
         }
