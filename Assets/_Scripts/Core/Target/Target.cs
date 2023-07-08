@@ -7,7 +7,6 @@ namespace Core.Targets
     public class Target : MonoBehaviour
     {
         [SerializeField] private TargetInput _input;
-        [SerializeField] private ThirdPersonRotation _rotation;
         [SerializeField] private Jumping _jumping;
         [SerializeField] private GroundCheck _groundCheck;
         private Camera _camera;
@@ -27,7 +26,6 @@ namespace Core.Targets
         private void Update()
         {
             float targetRotY = Mathf.Atan2(_input.MovementInput.x, _input.MovementInput.y) * Mathf.Rad2Deg + _camera.transform.eulerAngles.y;
-            _rotation.Rotate(targetRotY);
             _targetMovementDirection = Quaternion.Euler(0.0f, targetRotY, 0.0f) * Vector3.forward;
         }
 
