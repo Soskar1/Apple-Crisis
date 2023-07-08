@@ -29,8 +29,7 @@ namespace Core.Projectiles
             _landPointInstance.SetActive(IsGhost);
             _landPointInstance.transform.position = transform.position;
             
-            if (!IsGhost)
-                Landed?.Invoke();
+             Landed?.Invoke();
         }
     }
 }

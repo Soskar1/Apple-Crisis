@@ -29,9 +29,6 @@ namespace Core.Projectiles
 
         public abstract void Launch(Vector3 direction);
 
-        public virtual void Deactivate()
-        {
-            gameObject.SetActive(false);
-        }
+        public virtual void Deactivate() => gameObject.SetActive(false);
     }
 }

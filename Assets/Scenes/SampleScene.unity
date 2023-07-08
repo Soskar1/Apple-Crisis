@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.999995, z: -7.500005}
+  m_FollowOffset: {x: 0, y: 1.404551, z: -7.502793}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 0
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.999995, z: -7.500005}
+  m_FollowOffset: {x: 0, y: 1.404551, z: -7.502793}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -947,7 +947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.999995, z: -7.500005}
+  m_FollowOffset: {x: 0, y: 1.404551, z: -7.502793}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1248,7 +1248,6 @@ MonoBehaviour:
   _projectilePrefab: {fileID: 8754896837453961578, guid: cc077ecf03b6e3f4d86eb752935af54b,
     type: 3}
   _spawnPosition: {fileID: 928344789}
-  _spawnRate: 5
   _maxProjectileLaunchForce: {x: 8, y: 15, z: -15}
   _minProjectileLaunchForce: {x: -8, y: 8, z: -12}
 --- !u!4 &1761967847
