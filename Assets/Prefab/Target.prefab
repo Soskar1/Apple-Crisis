@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1529782724536171339}
   - component: {fileID: 4581609946567567574}
   - component: {fileID: 7478389335530888503}
-  - component: {fileID: 2476275655893997069}
   - component: {fileID: 5809526959714887957}
   - component: {fileID: 4209935736004361524}
   m_Layer: 0
@@ -122,7 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feba7151e4148f14684cabf62954f4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input: {fileID: 2476275655893997069}
   _jumping: {fileID: 5809526959714887957}
   _groundCheck: {fileID: 4209935736004361524}
 --- !u!114 &7478389335530888503
@@ -141,18 +139,6 @@ MonoBehaviour:
   _maxSpeed: 15
   _acceleration: 10
   _decceleration: 15
---- !u!114 &2476275655893997069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5548182251345265855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e6d02f2ecc2c114cb865bfa366dd1d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5809526959714887957
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,17 +1,23 @@
-using Cinemachine;
 using Core.UI;
 using UnityEngine;
+using Zenject;
 
 namespace Core.Targets
 {
     public class SceneBootstrap : MonoBehaviour
     {
-        [SerializeField] private GameObject _target;
+        [SerializeField] private Target _target;
         [SerializeField] private Transform _spawnPoint;
+        private Input _input;
+
+        [Inject]
+        public void Construct(Input input) => _input = input;
 
         private void Awake()
         {
-            GameObject targetInstance = Instantiate(_target, _spawnPoint.position, Quaternion.identity);
+            Target targetInstance = Instantiate(_target, _spawnPoint.position, Quaternion.identity);
+            targetInstance.Initialize(_input);
+            _input.Enable();
 
             HideCursor();
 

@@ -2,23 +2,16 @@ using UnityEngine;
 
 namespace Core
 {
-    public class TargetInput : MonoBehaviour
+    public class Input
     {
         private Controls _controls;
 
-        public Controls Controls
-        {
-            get
-            {
-                if (_controls == null)
-                    _controls = new Controls();
+        public Controls Controls => _controls;
 
-                return _controls;
-            }
-        }
+        public Input() => _controls = new Controls();
 
-        public void OnEnable() => Controls.Enable();
-        public void OnDisable() => Controls.Disable();
+        public void Enable() => Controls.Enable();
+        public void Disable() => Controls.Disable();
 
         public Vector2 MovementInput => Controls.Target.Movement.ReadValue<Vector2>();
     }

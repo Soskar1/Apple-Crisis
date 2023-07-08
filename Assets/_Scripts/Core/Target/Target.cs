@@ -6,13 +6,19 @@ namespace Core.Targets
 {
     public class Target : MonoBehaviour
     {
-        [SerializeField] private TargetInput _input;
         [SerializeField] private Jumping _jumping;
         [SerializeField] private GroundCheck _groundCheck;
         private Camera _camera;
         private IMovement _movement;
+        private Input _input;
 
         private Vector3 _targetMovementDirection;
+
+        public void Initialize(Input input)
+        {
+            _input = input;
+            _input.Controls.Target.Jump.performed += Jump;
+        }
 
         private void Awake()
         {
@@ -20,7 +26,6 @@ namespace Core.Targets
             _camera = Camera.main;
         }
 
-        private void OnEnable() => _input.Controls.Target.Jump.performed += Jump;
         private void OnDisable() => _input.Controls.Target.Jump.performed -= Jump;
 
         private void Update()
