@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 324.8959, y: -134.87714}
+  m_AnchoredPosition: {x: 294.8959, y: -166.12714}
   m_SizeDelta: {x: 549.7918, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41623108
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Stepan \u2014 level background design"
+  m_text: Stepan - level background design, Post processing
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a4f99d9edf1309e48b5696a2b6796470, type: 2}
   m_sharedMaterial: {fileID: 3765271585084464188, guid: a4f99d9edf1309e48b5696a2b6796470,
@@ -209,8 +209,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Name
+  m_text: Apple Crisis
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a4f99d9edf1309e48b5696a2b6796470, type: 2}
   m_sharedMaterial: {fileID: 3765271585084464188, guid: a4f99d9edf1309e48b5696a2b6796470,
@@ -1090,7 +1090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 324.896, y: -26.975426}
+  m_AnchoredPosition: {x: 294.8959, y: -33.225426}
   m_SizeDelta: {x: 549.7918, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461764045
@@ -1113,7 +1113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Soskar \u2014 code, level design"
+  m_text: Soskar - code, level design
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a4f99d9edf1309e48b5696a2b6796470, type: 2}
   m_sharedMaterial: {fileID: 3765271585084464188, guid: a4f99d9edf1309e48b5696a2b6796470,
@@ -1141,8 +1141,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1671,7 +1671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 324.8959, y: -80.92628}
+  m_AnchoredPosition: {x: 294.8959, y: -99.67628}
   m_SizeDelta: {x: 549.7918, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1025952052
@@ -1694,7 +1694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TimeWarp Knight \u2014 music, modelling"
+  m_text: TimeWarp Knight - music, modelling
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a4f99d9edf1309e48b5696a2b6796470, type: 2}
   m_sharedMaterial: {fileID: 3765271585084464188, guid: a4f99d9edf1309e48b5696a2b6796470,
@@ -1722,8 +1722,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2132,7 +2132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 324.8959, y: -188.82797}
+  m_AnchoredPosition: {x: 294.8959, y: -232.57797}
   m_SizeDelta: {x: 549.7918, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1300181709
@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Fire3dream \u2014 modelling"
+  m_text: Fire3dream - modelling
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a4f99d9edf1309e48b5696a2b6796470, type: 2}
   m_sharedMaterial: {fileID: 3765271585084464188, guid: a4f99d9edf1309e48b5696a2b6796470,
@@ -2183,8 +2183,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2471,10 +2471,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 50
+    m_Left: 20
     m_Right: 0
     m_Top: 0
-    m_Bottom: 50
+    m_Bottom: 0
   m_ChildAlignment: 3
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
