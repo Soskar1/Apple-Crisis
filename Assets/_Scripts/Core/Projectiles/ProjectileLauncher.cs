@@ -1,4 +1,5 @@
 using Core.UI;
+using System.Collections;
 using UnityEngine;
 using Zenject;
 
@@ -12,13 +13,15 @@ namespace Core.Projectiles
         [SerializeField] private Vector3 _maxProjectileLaunchForce;
         [SerializeField] private Vector3 _minProjectileLaunchForce;
 
+        [SerializeField] private float _launchDelay;
+
         private Projectile _projectileInstance;
         private Vector3 _directionToLaunch;
 
         private void Awake()
         {
             _projectileInstance = Instantiate(_projectilePrefab, _spawnPosition.position, Quaternion.identity);
-            _projectileInstance.Landed += Launch;
+            _projectileInstance.Landed += LaunchWithDelay;
         }
 
         private void Start() => GhostLaunch();
@@ -30,12 +33,23 @@ namespace Core.Projectiles
             _projectileInstance.GhostLaunch(_directionToLaunch);
         }
 
+        private void LaunchWithDelay() => StartCoroutine(DelayLaunch());
+
+        private IEnumerator DelayLaunch()
+        {
+            ResetProjectile();
+            _projectileInstance.Rigidbody.isKinematic = true;
+
+            yield return new WaitForSeconds(_launchDelay);
+            _projectileInstance.Rigidbody.isKinematic = false;
+            Launch();
+        }
+
         private void Launch()
         {
-            _projectileInstance.Landed -= Launch;
+            _projectileInstance.Landed -= LaunchWithDelay;
             _projectileInstance.Landed += Level.RestartLevel;
 
-            ResetProjectile();
             _projectileInstance.VisibleLaunch(_directionToLaunch);
         }
 
@@ -50,6 +64,7 @@ namespace Core.Projectiles
         private void ResetProjectile()
         {
             _projectileInstance.Rigidbody.velocity = Vector3.zero;
+            _projectileInstance.transform.eulerAngles = Vector3.zero;
             _projectileInstance.transform.position = _spawnPosition.position;
         }
     }

@@ -158,7 +158,7 @@ Transform:
   - {fileID: 3975949013012127441}
   - {fileID: 1056231830545066364}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &766274338046369955
 Rigidbody:
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groundCheckPoint: {fileID: 3975949013012127441}
-  _rayDistance: 0.65
+  _rayDistance: 0.8
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8

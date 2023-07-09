@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 2075264327398114097}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1210739599223215624
 MonoBehaviour:
@@ -48,8 +48,9 @@ MonoBehaviour:
   _projectilePrefab: {fileID: 8754896837453961578, guid: cc077ecf03b6e3f4d86eb752935af54b,
     type: 3}
   _spawnPosition: {fileID: 2075264327398114097}
-  _maxProjectileLaunchForce: {x: 8, y: 15, z: -15}
-  _minProjectileLaunchForce: {x: -8, y: 8, z: -12}
+  _maxProjectileLaunchForce: {x: 7, y: 15, z: -15}
+  _minProjectileLaunchForce: {x: -7, y: 8, z: -12}
+  _launchDelay: 4.5
 --- !u!1 &5669725749922944352
 GameObject:
   m_ObjectHideFlags: 0
