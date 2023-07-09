@@ -7,6 +7,7 @@ namespace Core
 {
     public class DeathZone : MonoBehaviour
     {
+        [SerializeField] private bool _killsPlayer;
         private ProjectileLauncher _projectileLauncher;
 
         [Inject]
@@ -21,7 +22,8 @@ namespace Core
                 _projectileLauncher.GhostLaunch();
 
             if (other.TryGetComponent(out Target target))
-                Level.RestartLevel();
+                if (_killsPlayer)
+                    Level.RestartLevel();
         }
     }
 }

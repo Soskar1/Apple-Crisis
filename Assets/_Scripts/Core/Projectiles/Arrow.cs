@@ -1,3 +1,4 @@
+using Cinemachine.Utility;
 using UnityEngine;
 
 namespace Core.Projectiles
@@ -30,11 +31,15 @@ namespace Core.Projectiles
         private void OnCollisionEnter(Collision collision)
         {
             Rigidbody.velocity = Vector3.zero;
+            collision.rigidbody.velocity = Vector3.zero;
 
             if (!_landPointInstance.gameObject.activeSelf)
             {
                 _landPointInstance.SetActive(true);
-                _landPointInstance.transform.position = collision.contacts[0].point;
+
+                ContactPoint contact = collision.contacts[0];
+                _landPointInstance.transform.rotation = Quaternion.LookRotation(contact.normal);
+                _landPointInstance.transform.position = contact.point;
             }
             
              Landed?.Invoke();
