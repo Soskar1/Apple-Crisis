@@ -13,9 +13,11 @@ namespace Core.Targets
 
         private const float EPSILON = 0.01f;
 
+        public float MaxMoveSpeed { get => _maxSpeed; set => _maxSpeed = value; }
+
         public void Move(Vector3 direction)
         {
-            Vector3 targetVelocity = new Vector3(direction.x * _maxSpeed, 0f, direction.z * _maxSpeed);
+            Vector3 targetVelocity = new Vector3(direction.x * MaxMoveSpeed, 0f, direction.z * MaxMoveSpeed);
             Vector3 velocityDifference = targetVelocity - _rigidbody.velocity;
             float accelerationRate = (Mathf.Abs(targetVelocity.magnitude) > EPSILON) ? _acceleration : _decceleration;
             float movementX = Mathf.Pow(Mathf.Abs(velocityDifference.x) * accelerationRate, _velocityPower) * Mathf.Sign(velocityDifference.x);
