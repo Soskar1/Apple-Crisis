@@ -18,7 +18,7 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.41
+    m_Value: 1
   intensity:
     m_OverrideState: 1
     m_Value: 3.67
@@ -93,19 +93,19 @@ MonoBehaviour:
     m_Value: 1
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 35.5
+    m_Value: 41.1
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 50
+    m_Value: 49.22
   gaussianMaxRadius:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 1.5
   highQualitySampling:
     m_OverrideState: 0
     m_Value: 0
   focusDistance:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 3.19
   aperture:
     m_OverrideState: 0
     m_Value: 5.6
