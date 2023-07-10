@@ -15,7 +15,6 @@ There are only 5 short levels in the game. In each level, the things on the tabl
 - Soskar — code, level design
 - Stepan — level, background design
 - TimeWarp Knight — music, modelling, [newgrounds.com](https://www.newgrounds.com/audio/listen/1228559)
-
 - Fire3dream — modelling
 
 ### License
